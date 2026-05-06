@@ -1,0 +1,29 @@
+<HTML>
+  <Head
+    ><Title> First Use Of Jquery </Title>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .Setcolor {
+        background-color: blue;
+      }
+    </style>
+  </Head>
+</HTML>
+<Body>
+  <button id="btn1">Click Me</button>
+</Body>
+
+<script type="text/javascript">
+  getData = (event, name) => {
+    alert(event.data.name)
+
+    alert(event.data.age)
+  }
+  $('#btn1').on('click', { name: 'Prafull', age: '37' }, function (event) {
+    getData(event, 'prafull')
+  })
+</script>

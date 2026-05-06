@@ -1,0 +1,99 @@
+<HTML>
+  <Head
+    ><Title> First Use Of Jquery </Title>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .Setcolor {
+        background-color: blue;
+      }
+    </style>
+  </Head>
+</HTML>
+<Body>
+  <input type="text" value="" id="txtname" placeholder="Enter Your Name Here" />
+
+  <div>
+    <p>First Para</p>
+    <p>Second Para</p>
+  </div>
+  <p class="Setcolor">Third Para OutSide Div</p>
+  <button id="btnhidetxtname" value="Hide Name Box">
+    Click To Hide Name Box
+  </button>
+  <button id="btnunhidetxtname" value="UnHide Name Box">
+    Click To UnHide Name Box
+  </button>
+
+  <button id="btnremoveclass" value="Remove Css Class">Remove</button>
+
+  <button id="btnappliedcss" value="Applied Css">Apply CSS</button>
+
+  <button id="btnmultiplecss" value="Applied Multiple Css">Apply CSS</button>
+
+  <button id="btnallappiled" value="Applied All Css">All Apply CSS</button>
+
+  <button id="btnattribute" value="Attribute Selector">
+    Attribute Selector
+  </button>
+</Body>
+<script type="text/javascript">
+  $(document).ready(function () {
+    let now = new Date()
+
+    console.log('Dom Loaded ' + now)
+
+    console.log($('#btnhidetxtname').text())
+
+    console.log($('p').text())
+
+    console.log($('.Setcolor').text())
+
+    console.log($('div>p').text())
+    alert($('p:first').text())
+    alert($('p:last').text())
+  })
+
+  $('#btnhidetxtname').click(function () {
+    $('#txtname').hide()
+  })
+
+  $('#btnunhidetxtname').click(function () {
+    $('#txtname').show()
+  })
+
+  $('#txtname').hover(function () {
+    console.log($('#btnhidetxtname').text())
+  })
+
+  $('#btnremoveclass').on('click', function () {
+    $('p').removeClass('Setcolor')
+  })
+
+  $('#btnappliedcss').on('click', function () {
+    $('p').css('color', 'GReen')
+  })
+
+  $('#btnmultiplecss').on('click', function () {
+    $('p').css({
+      color: 'red',
+      'font-size': '40px'
+    })
+  })
+
+  $('#btnallappiled').on('click', function () {
+    $('*').css({
+      color: 'red',
+      'font-size': '40px'
+    })
+  })
+
+  $('#btnattribute').on('click', function () {
+    alert($('#btnappliedcss[Value]').text())
+    $('#btnappliedcss[Value]').text('New CSS Applied')
+    alert($('#btnappliedcss[Value]').text())
+  })
+</script>
